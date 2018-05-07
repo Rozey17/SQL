@@ -27,14 +27,21 @@ namespace SQL
         private void button1_Click(object sender, EventArgs e)
         {
             DataAccess data = new DataAccess();
-            customer = data.GetPeople(textBox1.Text);
+            customer = data.GetPeople(textBox1.Text);// we use customer because it is a list of Model which is the return type of the GetAll method.
             UpDateBinding();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DataAccess data = new DataAccess();
-            data.Delete(textBox1.Text);
+            data.Delete(textBox1.Text);// we don't use the customer variable here because the method's return type is void.
+            UpDateBinding();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataAccess data = new DataAccess();
+            customer = data.GetAll(); // we use customer because it is a list of Model which is the return type of the GetAll method.
             UpDateBinding();
         }
     }
