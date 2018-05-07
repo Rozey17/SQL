@@ -13,6 +13,7 @@ namespace SQL
     public partial class Form1 : Form
     {
         private List<Model> customer = new List<Model>();
+
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace SQL
         private void button3_Click(object sender, EventArgs e)
         {
             DataAccess data = new DataAccess();
-            customer = data.GetAll(); // we use customer because it is a list of Model which is the return type of the GetAll method.
+            customer = data.GetAll();// we use customer because it is a list of Model which is the return type of the GetAll method.
             UpDateBinding();
         }
     }
